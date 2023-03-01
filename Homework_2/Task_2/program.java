@@ -8,8 +8,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import java.util.logging.*; //модуль для логггирования
+
 public class program {
-    
+    private static Logger log = Logger.getLogger(program.class.getName());
+
     public static void main(String[] args) {
 
     }
@@ -75,18 +78,23 @@ public class program {
 
     }
 
-    public static int[] bubble_sort(int[] data){
-        for (int i = 0; i < data.length; i++)
-        {
-            for (int j = 0; j < data.length - 1; j++)
-            {
-                if (data[j] > data[j + 1])
-                {
+    public static int[] bubble_sort(int[] data) throws SecurityException, IOException {
+        log.setLevel(Level.INFO); // Set level logging INFO
+        FileHandler fh = new FileHandler("logs.txt"); //create handler for logs
+        log.addHandler(fh);
+        SimpleFormatter sFormat = new SimpleFormatter(); //Set format for logs
+        fh.setFormatter(sFormat);
+        
+
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < data.length - 1; j++) {
+                if (data[j] > data[j + 1]) {
                     int t = data[j + 1];
                     data[j + 1] = data[j];
                     data[j] = t;
                 }
             }
+            log.logp(Level.INFO, program.class.getName(), program.class.getEnclosingMethod().getName(), "Iteration " + i , data);
         }
         return data;
     }
