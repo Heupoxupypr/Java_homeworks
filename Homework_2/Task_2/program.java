@@ -10,10 +10,18 @@ import java.io.IOException;
 
 import java.util.logging.*; //модуль для логггирования
 
+import java.util.Arrays; //для преобразования численного массива в строку
+
 public class program {
     private static Logger log = Logger.getLogger(program.class.getName());
 
     public static void main(String[] args) {
+        try {
+            bubble_sort(args_data(args));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
     }
 
@@ -49,9 +57,9 @@ public class program {
                 int[] arr = new int[data.length - 1];
                 for (int i = 0; i < arr.length; i++) {
                     arr[i] = Integer.parseInt(data[i + 1]);
-                    if (arr[i] % 2 != 0) {
-                        System.out.printf("%d ", arr[i]);
-                    }
+                    // if (arr[i] % 2 != 0) {
+                    // System.out.printf("%d ", arr[i]);
+                    // }
                 }
                 System.out.println();
                 return arr;
@@ -68,9 +76,9 @@ public class program {
             int[] arr = new int[str.length];
             for (int i = 0; i < arr.length; i++) {
                 arr[i] = Integer.parseInt(str[i]);
-                if (arr[i] % 2 != 0) {
-                    System.out.printf("%d ", arr[i]);
-                }
+                // if (arr[i] % 2 != 0) {
+                // System.out.printf("%d ", arr[i]);
+                // }
             }
             System.out.println();
             return arr;
@@ -80,11 +88,10 @@ public class program {
 
     public static int[] bubble_sort(int[] data) throws SecurityException, IOException {
         log.setLevel(Level.INFO); // Set level logging INFO
-        FileHandler fh = new FileHandler("logs.txt"); //create handler for logs
+        FileHandler fh = new FileHandler("logs.txt"); // create handler for logs
         log.addHandler(fh);
-        SimpleFormatter sFormat = new SimpleFormatter(); //Set format for logs
+        SimpleFormatter sFormat = new SimpleFormatter(); // Set format for logs
         fh.setFormatter(sFormat);
-        
 
         for (int i = 0; i < data.length; i++) {
             for (int j = 0; j < data.length - 1; j++) {
@@ -93,8 +100,10 @@ public class program {
                     data[j + 1] = data[j];
                     data[j] = t;
                 }
+                log.logp(Level.INFO, program.class.getName(), new Throwable()
+                        .getStackTrace()[0]
+                        .getMethodName(), "Iteration: " + Arrays.toString(data));
             }
-            log.logp(Level.INFO, program.class.getName(), program.class.getEnclosingMethod().getName(), "Iteration " + i , data);
         }
         return data;
     }
