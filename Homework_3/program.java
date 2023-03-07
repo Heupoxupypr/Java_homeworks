@@ -16,6 +16,7 @@ import java.util.Arrays; //для преобразования численно�
 public class program {
 
     private static Logger log = Logger.getLogger(program.class.getName());
+    
 
     public static void main(String[] args) {
         try {
@@ -109,9 +110,15 @@ public class program {
         return data;
     }
 
-    public static int[] sort(int[] data) {
+    public static int[] sort(int[] data) throws SecurityException, IOException {
         int[] dt = Arrays.copyOf(data, data.length);;
         int[] d = Arrays.copyOf(dt, dt.length);
+
+        log.setLevel(Level.INFO); // Set level logging INFO
+        FileHandler fh = new FileHandler("logs.txt"); // create handler for logs
+        log.addHandler(fh);
+        SimpleFormatter sFormat = new SimpleFormatter(); // Set format for logs
+        fh.setFormatter(sFormat);
 
         mergeSort(dt, d, 0, data.length - 1 );
 
@@ -121,7 +128,7 @@ public class program {
 
     }
 
-    public static void mergeSort(int[] dt, int[] d, int first_el, int last_el ) {
+    public static void mergeSort(int[] dt, int[] d, int first_el, int last_el ) throws SecurityException, IOException {
         if (first_el == last_el) {  //Если размер массива равен 1
             return;
         }
@@ -136,10 +143,13 @@ public class program {
         
     }
 
-    public static void merge(int[] dt, int[] d, int first, int mid, int last ) {
+    public static void merge(int[] dt, int[] d, int first, int mid, int last ) throws SecurityException, IOException {
         int i = first; //счетчик для левой части основного массива
         int j = mid + 1; //счетчик для правой части основного массива
         int k = first; //счетчик для общего массива
+
+        
+        
 
         
         while ((i <= mid) && (j <= last)) { //сравниваем элементы в левой и правой частях и записываем в буферный список
@@ -161,6 +171,10 @@ public class program {
         for (i = first; i <= last; i++) {
             dt[i] = d[i];
         }
+
+        log.logp(Level.INFO, program.class.getName(), new Throwable()
+                        .getStackTrace()[0]
+                        .getMethodName(), "Iteration: " + Arrays.toString(dt));
 
     }
 }
