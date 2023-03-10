@@ -14,12 +14,11 @@ import java.util.Arrays; //для преобразования численно�
 public class program {
 
     private static Logger log = Logger.getLogger(program.class.getName());
-    
 
     public static void main(String[] args) {
         try {
             // bubble_sort(args_data(args));
-            System.out.println("Sorted array: "+Arrays.toString(sort(args_data(args))));
+            System.out.println("Sorted array: " + Arrays.toString(sort(args_data(args))));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -109,7 +108,8 @@ public class program {
     }
 
     public static int[] sort(int[] data) throws SecurityException, IOException {
-        int[] dt = Arrays.copyOf(data, data.length);;
+        int[] dt = Arrays.copyOf(data, data.length);
+        ;
         int[] d = Arrays.copyOf(dt, dt.length);
 
         log.setLevel(Level.INFO); // Set level logging INFO
@@ -118,48 +118,41 @@ public class program {
         SimpleFormatter sFormat = new SimpleFormatter(); // Set format for logs
         fh.setFormatter(sFormat);
 
-        mergeSort(dt, d, 0, data.length - 1 );
-
-        
+        // mergeSort(dt, d, 0, data.length - 1 );
 
         return dt;
 
     }
 
-    public static void mergeSort(int[] dt, int[] d, int first_el, int last_el ) throws SecurityException, IOException {
-        if (first_el == last_el) {  //Если размер массива равен 1
+    public static void mergeSort(int[] dt, int[] d, int first_el, int last_el) throws SecurityException, IOException {
+        if (first_el == last_el) { // Если размер массива равен 1
             return;
         }
 
-        int middle = first_el + ((last_el - first_el) >> 1); //находим середину массива
-        
+        int middle = first_el + ((last_el - first_el) >> 1); // находим середину массива
 
-        mergeSort(dt, d, first_el, middle); //разделяем левую часть
-        mergeSort(dt, d, middle + 1, last_el); //разделяем правую часть
+        mergeSort(dt, d, first_el, middle); // разделяем левую часть
+        mergeSort(dt, d, middle + 1, last_el); // разделяем правую часть
 
         merge(dt, d, first_el, middle, last_el);
-        
+
     }
 
-    public static void merge(int[] dt, int[] d, int first, int mid, int last ) throws SecurityException, IOException {
-        int i = first; //счетчик для левой части основного массива
-        int j = mid + 1; //счетчик для правой части основного массива
-        int k = first; //счетчик для общего массива
+    public static void merge(int[] dt, int[] d, int first, int mid, int last) throws SecurityException, IOException {
+        int i = first; // счетчик для левой части основного массива
+        int j = mid + 1; // счетчик для правой части основного массива
+        int k = first; // счетчик для общего массива
 
-        
-        
-
-        
-        while ((i <= mid) && (j <= last)) { //сравниваем элементы в левой и правой частях и записываем в буферный список
-            if (dt[i] <= dt[j]){
-               d[k++] = dt[i++];
-            }
-            else {
+        while ((i <= mid) && (j <= last)) { // сравниваем элементы в левой и правой частях и записываем в буферный
+                                            // список
+            if (dt[i] <= dt[j]) {
+                d[k++] = dt[i++];
+            } else {
                 d[k++] = dt[j++];
             }
         }
-        
-        //копируем оставшееся
+
+        // копируем оставшееся
         while (i <= mid) {
             d[k++] = dt[i++];
         }
@@ -171,8 +164,60 @@ public class program {
         }
 
         log.logp(Level.INFO, program.class.getName(), new Throwable()
-                        .getStackTrace()[0]
-                        .getMethodName(), "Iteration: " + Arrays.toString(dt));
+                .getStackTrace()[0]
+                .getMethodName(), "Iteration: " + Arrays.toString(dt));
 
     }
+
+    public static void heapsort(int arr[]) {
+        int n = arr.length;
+
+        //Строим кучу
+        for (int i = n / 2 - 1; i >= 0; i--)
+            heapify(arr, n, i); //Просеиваем кучу
+
+        // Извлекаем корни из кучи
+        for (int i = n - 1; i >= 0; i--) {
+            // Перемещаем текущий корень в конец
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+
+            // просеиваем кучу заново с новым-0-м элементом
+            heapify(arr, i, 0);
+        }
+    }
+
+    // Преобразование в двоичную кучу поддерева с корневым узлом i,
+    public static void heapify(int arr[], int n, int i) {
+        int largest = i; // Инициализируем наибольший
+        int l = 2 * i + 1; // левый элемент
+        int r = 2 * i + 2; // правый элемент
+
+        // Если левый дочерний элемент больше корня
+        if (l < n && arr[l] > arr[largest])
+            largest = l;
+
+        // Если правый дочерний элемент больше
+        if (r < n && arr[r] > arr[largest])
+            largest = r;
+        // Если самый большой элемент не корень, меняем местами
+        if (largest != i) {
+            int swap = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = swap;
+
+            // Рекурсивно просеиваем кучу при наличии дочерних элементов у дочерних элементов корня
+            heapify(arr, n, largest);
+        }
+    }
+
+    /* Вспомогательная функция для вывода на экран массива размера n */
+    public static void printArray(int arr[]) {
+        int n = arr.length;
+        for (int i = 0; i < n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+
 }
