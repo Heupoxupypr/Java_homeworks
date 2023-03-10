@@ -108,9 +108,9 @@ public class program {
     }
 
     public static int[] sort(int[] data) throws SecurityException, IOException {
-        int[] dt = Arrays.copyOf(data, data.length);
-        ;
-        int[] d = Arrays.copyOf(dt, dt.length);
+        // int[] dt = Arrays.copyOf(data, data.length);
+
+        // int[] d = Arrays.copyOf(dt, dt.length);
 
         log.setLevel(Level.INFO); // Set level logging INFO
         FileHandler fh = new FileHandler("logs.txt"); // create handler for logs
@@ -119,8 +119,9 @@ public class program {
         fh.setFormatter(sFormat);
 
         // mergeSort(dt, d, 0, data.length - 1 );
+        heapsort(data);
 
-        return dt;
+        return data;
 
     }
 
@@ -172,16 +173,25 @@ public class program {
     public static void heapsort(int arr[]) {
         int n = arr.length;
 
-        //Строим кучу
-        for (int i = n / 2 - 1; i >= 0; i--)
-            heapify(arr, n, i); //Просеиваем кучу
+        log.logp(Level.INFO, program.class.getName(), new Throwable()
+                    .getStackTrace()[0]
+                    .getMethodName(), "Arryy to heapify: " + Arrays.toString(arr));
+        // Строим кучу
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heapify(arr, n, i); // Просеиваем кучу
+        }
 
         // Извлекаем корни из кучи
         for (int i = n - 1; i >= 0; i--) {
+            log.log(Level.INFO,"ROOT element: "+arr[0]);
             // Перемещаем текущий корень в конец
             int temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
+
+            log.logp(Level.INFO, program.class.getName(), new Throwable()
+                    .getStackTrace()[0]
+                    .getMethodName(), "Arryy to heapify: " + Arrays.toString(arr));
 
             // просеиваем кучу заново с новым-0-м элементом
             heapify(arr, i, 0);
@@ -207,7 +217,12 @@ public class program {
             arr[i] = arr[largest];
             arr[largest] = swap;
 
-            // Рекурсивно просеиваем кучу при наличии дочерних элементов у дочерних элементов корня
+            log.log(Level.INFO,"Change element number "+i+" with element number "+largest);
+
+            log.log(Level.INFO,"Arryy to heapify: " + Arrays.toString(arr));
+
+            // Рекурсивно просеиваем кучу при наличии дочерних элементов у дочерних
+            // элементов корня
             heapify(arr, n, largest);
         }
     }
