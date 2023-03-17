@@ -17,16 +17,22 @@ public class main_prog {
 
     );
 
+    // System.out.println(
+    //     new MapPrinter().mapColor(
+    //         mg.getMap())
+
+    // );
+
     var lee = new WaveAlgorithm(mg.getMap());
 
-    lee.Colorize(new Point2D(3, 3));
+    lee.Colorize(new Point2D(2, 11));
 
     System.out.println(
         new MapPrinter().rawData(
             mg.getMap())
 
     );
-    System.out.println(lee.getRoad(new Point2D(10, 10)).toString());
+    System.out.println(lee.getRoad(new Point2D(1, 1)).toString());
 
   }
 }
@@ -49,7 +55,7 @@ class Point2D {
 
   @Override
   public String toString() {
-    return String.format("x: %d  y: %d\n", x, y);
+    return String.format("x: %d  y: %d", x, y);
   }
 }
 
@@ -221,7 +227,7 @@ class WaveAlgorithm {
     // " " + map[exit.x - 1][exit.y] + " " + map[exit.x][exit.y - 1] + 
     // " " + map[exit.x + 1][exit.y] + " " + map[exit.x][exit.y + 1]);
 
-    System.out.println("End point "+ exit.toString() + " " + map[exit.x][exit.y]);
+    System.out.println("End point "+ exit.toString());
 
     if ((map[exit.x][exit.y] != -1) && (map[exit.x][exit.y] != 0)) {
       road.add(new Point2D(exit.x, exit.y));
@@ -229,19 +235,19 @@ class WaveAlgorithm {
         if (map[exit.x][exit.y] -1 == map[exit.x - 1][exit.y]) {
           road.add(new Point2D(exit.x - 1, exit.y));
           exit = new Point2D(exit.x - 1, exit.y);
-          System.out.println(exit.toString() + " " + map[exit.x][exit.y]);
+          // System.out.println(exit.toString() + " " + map[exit.x][exit.y]);
         } else if (map[exit.x][exit.y] - 1 == map[exit.x][exit.y + 1]) {
           road.add(new Point2D(exit.x, exit.y + 1));
           exit = new Point2D(exit.x, exit.y + 1);
-          System.out.println(exit.toString() + " " + map[exit.x][exit.y]);
+          // System.out.println(exit.toString() + " " + map[exit.x][exit.y]);
         } else if (map[exit.x][exit.y] - 1 == map[exit.x + 1][exit.y]) {
           road.add(new Point2D(exit.x + 1, exit.y));
           exit = new Point2D(exit.x + 1, exit.y);
-          System.out.println(exit.toString() + " " + map[exit.x][exit.y]);
+          // System.out.println(exit.toString() + " " + map[exit.x][exit.y]);
         } else if (map[exit.x][exit.y] - 1 == map[exit.x][exit.y - 1]) {
           road.add(new Point2D(exit.x, exit.y - 1));
           exit = new Point2D(exit.x, exit.y - 1);
-          System.out.println(exit.toString() + " " + map[exit.x][exit.y]);
+          // System.out.println(exit.toString() + " " + map[exit.x][exit.y]);
         }
 
       }
