@@ -1,6 +1,5 @@
 // -1 - стена, -2 - озеро, -3 - выход
 
-
 package java_projects.Java_homeworks.Homework_6;
 
 import java.util.ArrayList;
@@ -27,7 +26,7 @@ public class main_prog {
             mg.getMap())
 
     );
-    // lee.getRoad(new Point2D(10, 10), new Point2D(10, 20), new Point2D(10, 30));
+    System.out.println(lee.getRoad(new Point2D(10, 10)).toString());
 
   }
 }
@@ -50,7 +49,7 @@ class Point2D {
 
   @Override
   public String toString() {
-    return String.format("x: %d  y: %d", x, y);
+    return String.format("x: %d  y: %d\n", x, y);
   }
 }
 
@@ -217,7 +216,38 @@ class WaveAlgorithm {
   // метод поиска маршрута до переданной точки выхода
   public ArrayList<Point2D> getRoad(Point2D exit) {
     ArrayList<Point2D> road = new ArrayList<>();
-    ///
+
+    // System.out.println("End point "+ exit.toString() + " " + map[exit.x][exit.y] +
+    // " " + map[exit.x - 1][exit.y] + " " + map[exit.x][exit.y - 1] + 
+    // " " + map[exit.x + 1][exit.y] + " " + map[exit.x][exit.y + 1]);
+
+    System.out.println("End point "+ exit.toString() + " " + map[exit.x][exit.y]);
+
+    if ((map[exit.x][exit.y] != -1) && (map[exit.x][exit.y] != 0)) {
+      road.add(new Point2D(exit.x, exit.y));
+      while (map[exit.x][exit.y] != 1) {
+        if (map[exit.x][exit.y] -1 == map[exit.x - 1][exit.y]) {
+          road.add(new Point2D(exit.x - 1, exit.y));
+          exit = new Point2D(exit.x - 1, exit.y);
+          System.out.println(exit.toString() + " " + map[exit.x][exit.y]);
+        } else if (map[exit.x][exit.y] - 1 == map[exit.x][exit.y + 1]) {
+          road.add(new Point2D(exit.x, exit.y + 1));
+          exit = new Point2D(exit.x, exit.y + 1);
+          System.out.println(exit.toString() + " " + map[exit.x][exit.y]);
+        } else if (map[exit.x][exit.y] - 1 == map[exit.x + 1][exit.y]) {
+          road.add(new Point2D(exit.x + 1, exit.y));
+          exit = new Point2D(exit.x + 1, exit.y);
+          System.out.println(exit.toString() + " " + map[exit.x][exit.y]);
+        } else if (map[exit.x][exit.y] - 1 == map[exit.x][exit.y - 1]) {
+          road.add(new Point2D(exit.x, exit.y - 1));
+          exit = new Point2D(exit.x, exit.y - 1);
+          System.out.println(exit.toString() + " " + map[exit.x][exit.y]);
+        }
+
+      }
+    } else
+      road.add(new Point2D(-1, -1));
+
     return road;
   }
 }
