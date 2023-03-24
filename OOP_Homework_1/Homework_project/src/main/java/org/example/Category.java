@@ -7,7 +7,7 @@ public class Category {
 
 
     private String catname;
-    private ArrayList<Product> catProducts = new ArrayList<>();
+    private ArrayList<Product> catProducts;
 
     private static int defaultCategoryIndex;
     private static ArrayList<String> categoryNames;
@@ -31,6 +31,7 @@ public class Category {
             this.catname = catname;
         }
         Category.categoryNames.add(this.catname); //Добавляем название категории в список категорий
+        this.catProducts = new ArrayList<>();
 
     }
 
