@@ -40,25 +40,14 @@ public class Product {
         Product.productNames.add(this.name); //Добавляем имя продукста в список имен
         this.price = price;
         this.rating = rating;
-
-    }
-
-    // Конструктор копирования
-    public Product(Product product)
-    {
-        this.name = product.name;
-        this.price = product.price;
-        this.rating = product.rating;
-
-
-    }
-
-    public Product(String name, double price) {
-        this(name, price, 0);
     }
 
     public Product(String name) {
         this(name, 0);
+    }
+
+    public Product(String name, double price) {
+        this(name, price, 0);
     }
 
     public Product() {
@@ -66,19 +55,4 @@ public class Product {
     }
 
 
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public double getRating() {
-        return rating;
-    }
-
-    public String GetInfo() {
-        return String.format(this.getName() + " " + this.getPrice() + " " + this.getRating());
-    }
 }
