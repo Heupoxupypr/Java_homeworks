@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.ArrayList;
+
 /**
  * Class product with
  * name
@@ -11,6 +13,13 @@ public class Product {
     private double price;
     private double rating;
 
+    private static int defaultProductIndex;
+    private static ArrayList<String> productNames;
+
+    static {
+        defaultProductIndex = 1;
+        productNames = new ArrayList<String>();
+    }
 
     /**
      * Full constructor for Product
@@ -20,7 +29,15 @@ public class Product {
      * @param rating Raiting of product
      */
     public Product(String name, double price, double rating) {
-        this.name = name;
+        if ((name.isEmpty() //Если имя пустое
+                || Character.isDigit(name.charAt(0)))//Или если имя начинается с цифры
+                || Product.productNames.indexOf(name) != -1) { //Или если такое имя уже есть
+            this.name =
+                    String.format("DefaultProduct_%d", defaultProductIndex++);
+        } else {
+            this.name = name;
+        }
+        Product.productNames.add(this.name); //Добавляем имя продукста в список имен
         this.price = price;
         this.rating = rating;
     }
