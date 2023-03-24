@@ -38,4 +38,8 @@ public class Category {
     public Category() {
         this("");
     }
+
+    public static ArrayList<String> getCategoryNames() {
+        return categoryNames;
+    }
 }
