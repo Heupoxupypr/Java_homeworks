@@ -1,11 +1,17 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class User {
     private String login;
     private String password;
     private Basket basket;
+
+    public String getLogin() {
+        return login;
+    }
+
     private static int defaultUserIndex;
     private static ArrayList<String> userNames;
 
@@ -42,10 +48,27 @@ public class User {
     }
 
     public User(String login) {
-        this("", "");
+        this(login, "");
     }
 
     public User() {
         this("");
+    }
+
+    public static ArrayList<String> getUserNames() {
+        return userNames;
+    }
+    public void addToUserBasket(String product) {
+        Product data = Category.removeProduct(product);
+//        System.out.println(data.GetInfo());
+        if (data!= null)
+            this.basket.addProductToBasket(data);
+
+    }
+
+    public void getBasket() {
+        System.out.println(this.getLogin() +" Basket :");
+        this.basket.getBuyProducts();
+
     }
 }

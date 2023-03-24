@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.lang.model.type.NullType;
 import java.util.ArrayList;
 
 //public class Category extends Product {
@@ -10,15 +11,16 @@ public class Category {
     private ArrayList<Product> catProducts;
 
     private static int defaultCategoryIndex;
-    private static ArrayList<String> categoryNames;
+    private static ArrayList<Category> categoryNames;
 
     static {
         defaultCategoryIndex = 1;
-        categoryNames = new ArrayList<String>();
+        categoryNames = new ArrayList<Category>();
     }
 
     /**
      * Full constructor for Category
+     *
      * @param catname Nane of product's category
      */
     public Category(String catname) {
@@ -30,7 +32,7 @@ public class Category {
         } else {
             this.catname = catname;
         }
-        Category.categoryNames.add(this.catname); //Добавляем название категории в список категорий
+        Category.categoryNames.add(this); //Добавляем название категории в список категорий
         this.catProducts = new ArrayList<>();
 
     }
@@ -39,7 +41,46 @@ public class Category {
         this("");
     }
 
-    public static ArrayList<String> getCategoryNames() {
+    public static ArrayList<Category> getCategoryNames() {
         return categoryNames;
+    }
+
+    public void addProductInCategory(Product product) {
+        this.catProducts.add(product);
+    }
+
+//    public static void removeProduct(Product product) {
+//        for (int i = 0; i < categoryNames.size(); i++) {
+//            System.out.println("Category: " + categoryNames.get(i).catname);
+//            System.out.println("    Products: ");
+//            for (int y = 0; y < categoryNames.get(i).catProducts.size(); y++) {
+//                System.out.println("    Product " + (y+1) + ": " + categoryNames.get(i).catProducts.get(y).GetInfo());
+//            }
+//            System.out.println();
+//        }
+//    }
+
+    public static Product removeProduct(String productName) {
+        for (int i = 0; i < categoryNames.size(); i++) {
+            for (int y = 0; y < categoryNames.get(i).catProducts.size(); y++) {
+                if (categoryNames.get(i).catProducts.get(y).getName().equals(productName)){
+                    Product returnProduct = new Product(categoryNames.get(i).catProducts.get(y));
+                    categoryNames.get(i).catProducts.remove(y);
+                    return returnProduct;
+                }
+            }
+        }
+        return null;
+    }
+
+    public static void printAllProducts() {
+        for (int i = 0; i < categoryNames.size(); i++) {
+            System.out.println("Category: " + categoryNames.get(i).catname);
+            System.out.println("    Products: ");
+            for (int y = 0; y < categoryNames.get(i).catProducts.size(); y++) {
+                System.out.println("    Product " + (y+1) + ": " + categoryNames.get(i).catProducts.get(y).GetInfo());
+            }
+            System.out.println();
+        }
     }
 }
