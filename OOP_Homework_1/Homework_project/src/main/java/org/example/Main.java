@@ -14,6 +14,9 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Category fruits = new Category();
+        Category vegetables = new Category();
+        Category bakery = new Category();
+//        System.out.println("Hello world!");
     }
 }
