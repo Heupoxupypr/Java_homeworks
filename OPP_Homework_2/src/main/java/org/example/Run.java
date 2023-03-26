@@ -1,5 +1,5 @@
 package org.example;
 
 public interface Run {
-    public void Run();
+    public Boolean Run(int distance);
 }

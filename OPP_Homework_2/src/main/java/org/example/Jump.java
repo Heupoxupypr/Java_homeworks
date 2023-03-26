@@ -1,5 +1,5 @@
 package org.example;
 
 public interface Jump {
-    public void Jump();
+    public Boolean Jump(int height);
 }
