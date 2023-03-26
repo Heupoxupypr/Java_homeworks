@@ -8,7 +8,7 @@ import java.util.Random;
 /**
  * Public class BaseClass with param @name
  */
-public abstract class BaseClass {
+public class BaseClass {
     protected String name;
     protected int maxJumpHeight;
     protected int maxRunDistance;
@@ -83,5 +83,8 @@ public abstract class BaseClass {
         this.maxRunDistance = maxRunDistance;
     }
 
-    public abstract String getInfo();
+    public String getInfo(){
+        return String.format("name: %s;  Max run distance: %d; Max jump height: %d;",
+                this.getName(), this.getMaxRunDistance(), this.getMaxJumpHeight());
+    }
 }

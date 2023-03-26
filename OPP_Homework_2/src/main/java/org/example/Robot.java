@@ -15,8 +15,7 @@ public class Robot extends BaseClass implements Run, Jump{
 
     @Override
     public String getInfo() {
-        return String.format(" Robot name: %s;  Max run distance: %d; Max jump height: %d;",
-                super.getName(), super.getMaxRunDistance(), super.getMaxJumpHeight());
+        return String.format(" Robot  %s", super.getInfo());
     }
     @Override
     public Boolean Jump(int height) {

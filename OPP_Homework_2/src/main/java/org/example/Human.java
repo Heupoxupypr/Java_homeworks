@@ -14,8 +14,7 @@ public class Human extends BaseClass implements Run, Jump{
 
     @Override
     public String getInfo() {
-        return String.format(" Human name: %s;  Max run distance: %d; Max jump height: %d;",
-                super.getName(), super.getMaxRunDistance(), super.getMaxJumpHeight());
+        return String.format(" Human  %s", super.getInfo());
     }
 
     @Override

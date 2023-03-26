@@ -24,10 +24,8 @@ public class Cat extends BaseClass implements Run, Jump {
         super();
     }
 
-    @Override
     public String getInfo() {
-        return String.format(" Cat name: %s;  Max run distance: %d; Max jump height: %d;",
-                super.getName(), super.getMaxRunDistance(), super.getMaxJumpHeight());
+        return String.format("Cat %s", super.getInfo());
     }
 
     @Override
