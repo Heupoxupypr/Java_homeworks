@@ -9,6 +9,9 @@ import java.util.ArrayList;
  */
 public class BaseClass {
     protected String name;
+
+    protected int maxJumpHeight;
+    protected int maxRunDistance;
     private static int defaultIndex;
     private static ArrayList<String> Names;
 
