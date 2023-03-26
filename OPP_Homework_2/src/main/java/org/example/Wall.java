@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Random;
 
-public class Wall {
+public class Wall extends BaseBarrier {
     private int height;
     private static Random rnd;
 
@@ -10,19 +10,20 @@ public class Wall {
         rnd = new Random();
     }
 
-    public Wall(int height) {
+    public Wall(String name, int height) {
+        super(name);
         this.height = height;
     }
 
     public Wall() {
-        this(Wall.rnd.nextInt(10,50));
+        this("", Wall.rnd.nextInt(10, 50));
     }
 
     public int getHeight() {
         return height;
     }
 
-    public String getInfo(){
-        return String.format("Wall height;", this.getHeight());
+    public String getInfo() {
+        return String.format("Wall %s height %d;", super.getInfo(), this.getHeight());
     }
 }
