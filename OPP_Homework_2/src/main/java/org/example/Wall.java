@@ -16,7 +16,7 @@ public class Wall extends BaseBarrier {
     }
 
     public Wall() {
-        this("", Wall.rnd.nextInt(10, 50));
+        this("", Wall.rnd.nextInt(1, 10));
     }
 
     public int getHeight() {
