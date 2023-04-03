@@ -12,8 +12,9 @@ public class Main {
 //        System.out.println(calc2.sum(new ArrayList<>(Arrays.asList(1.0,2.0,3.5))));
 
         Calculator calc3 = new Calculator();
-        System.out.println(calc3.sum(new ArrayList<>(Arrays.asList(1.0,2.0,3.5))));
-        System.out.println(calc3.multiplication(new ArrayList<>(Arrays.asList(1.0,2.0,3.5))));
-        System.out.println(calc3.division(new ArrayList<>(Arrays.asList(1.0,2.0,3.5))));
+//        System.out.println(calc3.sum(new ArrayList<>(Arrays.asList(1.0,2.0,3.5))));
+//        System.out.println(calc3.multiplication(new ArrayList<>(Arrays.asList(1.0,2.0,3.5))));
+//        System.out.println(calc3.division(new ArrayList<>(Arrays.asList(1.0,2.0,3.5))));
+        calc3.binaryTranformation(2.25);
     }
 }
