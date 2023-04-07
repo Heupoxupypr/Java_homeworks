@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b40b12f7-61b4-4769-b105-29d1c429b627" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_4/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_4/src/main/java/org/example/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_4/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java_homeworks.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_5/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_5/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +39,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "openjdk-20",
-    "last_opened_file_path": "D:/IntelliJ_IDEA_Projects/OOP_Seminar10",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "D:/IntelliJ_IDEA_Projects/Java_homeworks",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
