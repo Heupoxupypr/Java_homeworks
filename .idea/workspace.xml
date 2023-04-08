@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b40b12f7-61b4-4769-b105-29d1c429b627" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_5/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_5/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b40b12f7-61b4-4769-b105-29d1c429b627" name="Changes" comment="Update gitignore file">
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_5/src/main/java/org/example/Controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_5/src/main/java/org/example/Model/DataService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_5/src/main/java/org/example/Model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_5/src/main/java/org/example/Model/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_5/src/main/java/org/example/Model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_5/src/main/java/org/example/Model/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_5/src/main/java/org/example/View/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP_Homework_5/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP_Homework_5/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +61,18 @@
       <option name="presentableId" value="Default" />
       <updated>1680321566619</updated>
     </task>
+    <task id="LOCAL-00001" summary="Update gitignore file">
+      <created>1680851552910</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680851552910</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update gitignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update gitignore file" />
   </component>
 </project>
