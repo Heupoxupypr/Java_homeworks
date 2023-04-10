@@ -8,7 +8,7 @@ public class Teacher extends User {
     List<Integer> groups;
 
     public Teacher(LocalDate dateBirth, String fio, int id) {
-        super(LocalDate.now(), "Petrov I.O.", 29);
+        super(dateBirth, fio, id);
     }
 
     public Teacher() {

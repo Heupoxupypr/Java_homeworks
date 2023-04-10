@@ -8,7 +8,7 @@ public class Student extends User{
     List<Integer> grade;
 
     public Student(LocalDate dateBirth, String fio, int id) {
-        super(LocalDate.now(), "Ivanov I.O.", 23);
+        super(dateBirth, fio, id);
     }
 
     public Student() {
