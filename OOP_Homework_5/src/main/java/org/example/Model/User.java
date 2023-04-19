@@ -21,11 +21,9 @@ public abstract class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "dateBirth=" + dateBirth +
+        return  "dateBirth=" + dateBirth +
                 ", fio='" + fio + '\'' +
-                ", id=" + id +
-                '}';
+                ", id=" + id;
     }
 
     //    LocalDate vacation;
