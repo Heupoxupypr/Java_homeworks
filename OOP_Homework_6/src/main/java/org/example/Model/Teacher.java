@@ -3,8 +3,8 @@ package org.example.Model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
-public class Teacher extends User {
+//По принципу единственной ответственности данный клас имеет зону ответственности только за учителей
+public class Teacher extends User  implements TeacherGroups{
     private int experience;
     private List<Integer> groups;
 
@@ -31,10 +31,12 @@ public class Teacher extends User {
                 ", Groups =" + this.groups.toString() +")";
     }
 
+    @Override
     public List<Integer> getGroups() {
         return groups;
     }
 
+    @Override
     public void setGroups(Integer group) {
         this.groups.add(group);
     }

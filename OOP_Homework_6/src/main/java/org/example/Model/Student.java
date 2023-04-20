@@ -1,8 +1,8 @@
 package org.example.Model;
 
 import java.time.LocalDate;
-
-public class Student extends User {
+//По принципу единственной ответственности данный клас имеет зону ответственности только за студентов
+public class Student extends User implements StudentId {
     private int groupId;
 //    List<Integer> grade;
     private static int defaultIndex;
@@ -36,11 +36,11 @@ public class Student extends User {
     public String toString() {
         return "Student (" + super.toString() + ", groupId=" + this.groupId + ")";
     }
-
+    @Override
     public int getGroupId() {
         return groupId;
     }
-
+    @Override
     public void setGroupId(int groupId) {
         this.groupId = groupId;
     }

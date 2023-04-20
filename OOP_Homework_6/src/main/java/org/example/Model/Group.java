@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Group {
+//применены интерфейсы для разделения интерфейсов и реализации принципа открытости-закрытости
+public class Group implements GroupStudent,GroupList,GroupNumber,GroupTeacher{
     private int number;
     private Teacher teacher;
     private List<Student> group;
@@ -32,10 +33,12 @@ public class Group {
         this(rnd.nextInt(100,1000));
     }
 
+    @Override
     public int getNumber() {
         return number;
     }
 
+    @Override
     public void setNumber(int number) {
         this.number = number;
         if (!this.group.isEmpty()){
@@ -48,25 +51,31 @@ public class Group {
         }
     }
 
+    @Override
     public Teacher getTeacher() {
         return teacher;
     }
 
+    @Override
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
         this.teacher.setGroups(this.number);
     }
 
+    @Override
     public List<Student> getGroup() {
         return group;
     }
 
+    @Override
     public void setGroup(List<Student> group) {
         this.group.addAll(group);
         for (int i = 0; i < this.group.size(); i++){
             this.group.get(i).setGroupId(this.number);
         }
     }
+
+    @Override
     public void addStudent(Student student) {
         student.setGroupId(this.number);
         this.group.add(student);

@@ -1,21 +1,15 @@
 package org.example.Model;
 
 import java.util.List;
-
-public class UserService implements DataService{
-
+//Добавлен принцип разделения интерфейсов
+public class UserService implements StudentService, TeacherService{
     @Override
-    public Student create(Student student) {
+    public Student createStudent(Student student) {
         return student;
     }
 
     @Override
-    public Teacher create(Teacher teacher) {
+    public Teacher createTeacher(Teacher teacher) {
         return teacher;
-    }
-
-    @Override
-    public List<User> read(List<User> users) {
-        return users;
     }
 }

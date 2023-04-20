@@ -6,7 +6,9 @@ import org.example.Model.Teacher;
 
 import java.util.List;
 
-public class View {
+//Применен принцип разделения интерфейсов и принцип открытости-закрытости
+public class View implements StudentView, TeacherView, GroupView{
+    @Override
     public String studentView(List<Student> students) {
         StringBuilder sb = new StringBuilder();
         for (Student s : students) {
@@ -14,6 +16,7 @@ public class View {
         }
         return sb.toString();
     }
+    @Override
     public String teacherView(List<Teacher> teachers) {
         StringBuilder sb = new StringBuilder();
         for (Teacher s : teachers) {
@@ -22,6 +25,7 @@ public class View {
         return sb.toString();
     }
 
+    @Override
     public String groupsView(List<Group> groups) {
         StringBuilder sb = new StringBuilder();
         for (Group s : groups) {

@@ -17,10 +17,10 @@ public class Controller {
         int teachersCount = 5;
         View view = new View();
         for (int i = 0; i < studentsCount; i++){
-            students.add(userService.create(new Student()));
+            students.add(userService.createStudent(new Student()));
         }
         for (int i = 0; i < teachersCount; i++){
-            teachers.add(userService.create(new Teacher()));
+            teachers.add(userService.createTeacher(new Teacher()));
         }
 //        List<User> users = new ArrayList<>();
 //        users.add(new Student());
