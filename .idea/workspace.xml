@@ -4,24 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b40b12f7-61b4-4769-b105-29d1c429b627" name="Changes" comment="Create base project for Homework 6 base on Homework 5.">
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/GroupList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/GroupNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/GroupStudent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/GroupTeacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/StudentId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/TeacherGroups.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/TeacherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/View/GroupView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/View/StudentView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/View/TeacherView.java" afterDir="false" />
+    <list default="true" id="b40b12f7-61b4-4769-b105-29d1c429b627" name="Changes" comment="Refactoring project with SOLID principals">
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_7/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_7/src/main/java/org/example/Calculable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_7/src/main/java/org/example/CalculableFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_7/src/main/java/org/example/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_7/src/main/java/org/example/Factory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_7/src/main/java/org/example/ICalculableFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_7/src/main/java/org/example/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_7/src/main/java/org/example/LogCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_7/src/main/java/org/example/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_7/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Homework_7/src/main/java/org/example/ViewCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/Model/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP_Homework_6/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OOP_Homework_6/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP_Homework_6/src/main/java/org/example/View/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,11 +36,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -69,7 +65,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "D:/IntelliJ_IDEA_Projects/Java_homeworks/OOP_Homework_6/src/main/java/org/example",
+    "last_opened_file_path": "D:/IntelliJ_IDEA_Projects/Java_homeworks",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -77,6 +73,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IntelliJ_IDEA_Projects\Java_homeworks\OOP_Homework_7\src\main\java\org\example" />
       <recent name="D:\IntelliJ_IDEA_Projects\Java_homeworks\OOP_Homework_6\src\main\java\org\example" />
     </key>
   </component>
@@ -110,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681902013508</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactoring project with SOLID principals">
+      <created>1681967604780</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681967604780</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +132,7 @@
     <MESSAGE value="Update gitignore file" />
     <MESSAGE value="Create base project for Homework.&#10;Project created in Seminar." />
     <MESSAGE value="Create base project for Homework 6 base on Homework 5." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create base project for Homework 6 base on Homework 5." />
+    <MESSAGE value="Refactoring project with SOLID principals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring project with SOLID principals" />
   </component>
 </project>
