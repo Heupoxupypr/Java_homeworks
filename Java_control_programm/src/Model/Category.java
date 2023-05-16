@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class Category {
+public class Category implements CategoryList, CategoryName{
     private int categoryId;
     private String categoryName;
     private List<Toy> categoryToys;
@@ -44,5 +44,15 @@ public class Category {
 
     public Category() {
         this(defaultCategoryNames.get(rnd.nextInt(defaultCategoryNames.size())));
+    }
+
+    @Override
+    public void setToysList(List<Toy> toys) {
+        this.categoryToys.addAll(toys);
+    }
+
+    @Override
+    public void setCategoryName(String name) {
+        this.categoryName = name;
     }
 }
