@@ -25,11 +25,14 @@ public class Category {
     }
 
     public Category(String categoryName, List<Toy> categoryToys) {
-        if (Category.Names.indexOf(categoryName) != -1){
+        if (categoryName.isEmpty() ||
+                Character.isDigit(categoryName.charAt(0)) ||
+                Category.Names.indexOf(categoryName) != -1){
             this.categoryName = String.format("CategoryDefaultName_%d", defaultIndex);
         }
         else {
             this.categoryName = categoryName;
+            Category.Names.add(this.categoryName);
         }
         this.categoryToys.addAll(categoryToys);
         this.categoryId = defaultIndex++;
