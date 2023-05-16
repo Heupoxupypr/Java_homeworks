@@ -49,10 +49,18 @@ public class Category implements CategoryList, CategoryName{
     @Override
     public void setToysList(List<Toy> toys) {
         this.categoryToys.addAll(toys);
+        for (int i = 0; i < this.categoryToys.size(); i++){
+            this.categoryToys.get(i).setCategory(this.categoryName);
+        }
     }
 
     @Override
     public void setCategoryName(String name) {
         this.categoryName = name;
+        if (this.categoryToys.size() != 0){
+            for (int i = 0; i < this.categoryToys.size(); i++) {
+                this.categoryToys.get(i).setCategory(name);
+            }
+        }
     }
 }

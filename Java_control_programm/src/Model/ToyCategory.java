@@ -1,5 +1,5 @@
 package Model;
 
 public interface ToyCategory {
-    void addCategory (String categoryName);
+    void setCategory(String categoryName);
 }

@@ -17,7 +17,7 @@ public class Toy extends Thing implements ToyCategory{
     }
 
     @Override
-    public void addCategory(String categoryName) {
+    public void setCategory(String categoryName) {
         this.categoryName = categoryName;
     }
 }
