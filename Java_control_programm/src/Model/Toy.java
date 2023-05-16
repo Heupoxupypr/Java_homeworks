@@ -1,6 +1,6 @@
 package Model;
 
-public class Toy extends Thing{
+public class Toy extends Thing implements ToyCategory{
     String categoryName;
 
     public Toy(String name, double weight, String categoryName) {
@@ -14,5 +14,10 @@ public class Toy extends Thing{
     }
     public Toy() {
         this("No_category");
+    }
+
+    @Override
+    public void addCategory(String categoryName) {
+        this.categoryName = categoryName;
     }
 }
