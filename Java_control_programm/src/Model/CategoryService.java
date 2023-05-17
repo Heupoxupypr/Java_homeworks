@@ -9,4 +9,7 @@ public class CategoryService {
     public Category createCategory(String categoryName, List<Toy> toys) {
         return new Category(categoryName, toys);
     }
+    public void addToyToCategory (Category category, Toy toy){
+        category.addToyToList(toy);
+    }
 }
