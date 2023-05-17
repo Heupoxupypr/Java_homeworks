@@ -63,4 +63,12 @@ public class Category implements CategoryList, CategoryName{
             }
         }
     }
+
+    @Override
+    public String toString(){
+        return "Category {ID = " + this.categoryId +
+                " categoryName = " + this.categoryName +
+                " toyCount = " + this.categoryToys.size() +
+                "}";
+    }
 }

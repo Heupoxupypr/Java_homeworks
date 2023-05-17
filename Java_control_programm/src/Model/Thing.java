@@ -32,4 +32,12 @@ public abstract class Thing {
         this(defaultToyNames.get(rnd.nextInt(1,defaultToyNames.size())),
                                             rnd.nextInt(1,101));
     }
+
+    @Override
+    public String toString(){
+        return "toyID = " + this.id +
+                " name = " + this.name +
+                " weight = " + this.weight +
+                "}";
+    }
 }

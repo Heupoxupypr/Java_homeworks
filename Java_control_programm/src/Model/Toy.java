@@ -20,4 +20,9 @@ public class Toy extends Thing implements ToyCategory{
     public void setCategory(String categoryName) {
         this.categoryName = categoryName;
     }
+
+    @Override
+    public String toString(){
+        return "Toy (" + super.toString() + ", categoryName = " + this.categoryName + ")";
+    }
 }
