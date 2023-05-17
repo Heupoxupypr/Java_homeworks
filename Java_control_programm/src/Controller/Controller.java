@@ -10,8 +10,8 @@ public class Controller {
     public void start() {
         ThingService thingService = new ThingService();
         CategoryService categoryService = new CategoryService();
-        int categoryCount = 10;
-        int toysCount = 50;
+        int categoryCount = 5;
+        int toysCount = 15;
         List<Category> categoryList = new ArrayList<>();
         List<Toy> toyList = new ArrayList<>();
         for (int i = 0; i < toysCount; i++) {
@@ -30,7 +30,6 @@ public class Controller {
                 for(int j = 0; j < categoryList.size(); j++){
                     if (categoryList.get(j).getCategoryName().toLowerCase().contains(
                             toyList.get(i).getToyName().toLowerCase())){
-//                        toyList.get(i).setCategory(categoryList.get(j).getCategoryName());
                         categoryList.get(j).addToyToList(toyList.get(i));
                         break;
                     }
@@ -39,5 +38,27 @@ public class Controller {
         }
         System.out.println(view.toysView(toyList));
         System.out.println(view.categoriesView(categoryList));
+
+        int removeToyId = 1;
+
+        for (int i = 0; i < toysCount; i++) {
+            if (toyList.get(i).getToyId() == removeToyId){
+                if (!toyList.get(i).getCategory().equals("No_category")) {
+                    for(int j = 0; j < categoryList.size(); j++){
+                        if (categoryList.get(j).getCategoryName().toLowerCase().contains(
+                                toyList.get(i).getToyName().toLowerCase())){
+                            categoryList.get(j).removeToyFromList(toyList.get(i));
+                            break;
+                        }
+                    }
+                }
+                toyList.remove(toyList.get(i));
+                break;
+            }
+        }
+
+        System.out.println(view.toysView(toyList));
+        System.out.println(view.categoriesView(categoryList));
+
     }
 }

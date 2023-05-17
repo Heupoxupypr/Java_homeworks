@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-public abstract class Thing implements ThingName{
+public abstract class Thing implements ThingName, ThingId{
     private String name;
     private double weight;
     private int id;
@@ -41,7 +41,12 @@ public abstract class Thing implements ThingName{
                 "}";
     }
     @Override
-    public String getToyName(){
+    public String getName(){
         return this.name;
+    }
+
+    @Override
+    public int getId() {
+        return this.id;
     }
 }

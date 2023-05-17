@@ -1,5 +1,5 @@
 package Model;
 
 public interface ThingName {
-    String getToyName();
+    String getName();
 }
