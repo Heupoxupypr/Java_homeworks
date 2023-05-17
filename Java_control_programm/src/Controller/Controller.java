@@ -26,8 +26,10 @@ public class Controller {
         }
 //        System.out.println(view.categoriesView(categoryList));
         for (int i = 0; i < toyList.size(); i++) {
-            for(int j = 0; j < categoryList.size(); j++){
-//                if (toyList.get(i).)
+            if (toyList.get(i).getCategory().equals("No_category")){
+                for(int j = 0; j < categoryList.size(); j++){
+                    if (toyList.get(i).getToyName().toLowerCase().contains(categoryList.get(j).))
+                }
             }
         }
     }

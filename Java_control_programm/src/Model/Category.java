@@ -66,6 +66,11 @@ public class Category implements CategoryList, CategoryName{
     }
 
     @Override
+    public String getCategoryName() {
+        return this.categoryName;
+    }
+
+    @Override
     public String toString(){
         return "Category {ID = " + this.categoryId +
                 " categoryName = " + this.categoryName +
