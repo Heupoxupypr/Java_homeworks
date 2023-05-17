@@ -19,6 +19,11 @@ public class Controller {
         }
 
         View view = new View();
-        System.out.println(view.toysView(toyList));
+//        System.out.println(view.toysView(toyList));
+
+        for (int i = 0; i < categoryCount; i++) {
+            categoryList.add(categoryService.createFreeCategory());
+        }
+        System.out.println(view.categoriesView(categoryList));
     }
 }
