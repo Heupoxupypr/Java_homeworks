@@ -34,6 +34,7 @@ public class Category implements CategoryList, CategoryName{
             this.categoryName = categoryName;
             Category.Names.add(this.categoryName);
         }
+        this.categoryToys = new ArrayList<>();
         this.categoryToys.addAll(categoryToys);
         this.categoryId = defaultIndex++;
     }
