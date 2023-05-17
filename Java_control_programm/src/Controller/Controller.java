@@ -24,12 +24,12 @@ public class Controller {
         for (int i = 0; i < categoryCount; i++) {
             categoryList.add(categoryService.createFreeCategory());
         }
-//        System.out.println(view.categoriesView(categoryList));
+        System.out.println(view.categoriesView(categoryList));
         for (int i = 0; i < toyList.size(); i++) {
             if (toyList.get(i).getCategory().equals("No_category")){
                 for(int j = 0; j < categoryList.size(); j++){
-                    if (toyList.get(i).getToyName().toLowerCase().contains(
-                            categoryList.get(j).getCategoryName().toLowerCase())){
+                    if (categoryList.get(j).getCategoryName().toLowerCase().contains(
+                            toyList.get(i).getToyName().toLowerCase())){
 //                        toyList.get(i).setCategory(categoryList.get(j).getCategoryName());
                         categoryList.get(j).addToyToList(toyList.get(i));
                         break;
@@ -37,5 +37,7 @@ public class Controller {
                 }
             }
         }
+        System.out.println(view.toysView(toyList));
+        System.out.println(view.categoriesView(categoryList));
     }
 }

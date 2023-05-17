@@ -11,7 +11,7 @@ public class Category implements CategoryList, CategoryName{
     private List<Toy> categoryToys;
     private static int defaultIndex;
     private static String[] defaultNames = {"Bears", "Rabbits", "Cars",
-            "TrainS", "Cranes", "Cubes",
+            "Train", "Cranes", "Cubes",
             "Pencils", "Markers"};
     private static ArrayList<String> defaultCategoryNames;
     private static ArrayList<String> Names;
@@ -59,6 +59,13 @@ public class Category implements CategoryList, CategoryName{
     public void addToyToList(Toy toy) {
         this.categoryToys.add(toy);
         toy.setCategory(this.categoryName);
+    }
+
+    @Override
+    public void removeToyFromList(Toy toy) {
+        if(this.categoryToys.contains(toy)){
+            this.categoryToys.remove(toy);
+        }
     }
 
     @Override

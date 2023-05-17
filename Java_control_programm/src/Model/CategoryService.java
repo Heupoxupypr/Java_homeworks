@@ -12,4 +12,7 @@ public class CategoryService {
     public void addToyToCategory (Category category, Toy toy){
         category.addToyToList(toy);
     }
+    public void removeToyFromCategory(Category category, Toy toy){
+        category.removeToyFromList(toy);
+    }
 }
