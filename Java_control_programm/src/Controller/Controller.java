@@ -24,6 +24,11 @@ public class Controller {
         for (int i = 0; i < categoryCount; i++) {
             categoryList.add(categoryService.createFreeCategory());
         }
-        System.out.println(view.categoriesView(categoryList));
+//        System.out.println(view.categoriesView(categoryList));
+        for (int i = 0; i < toyList.size(); i++) {
+            for(int j = 0; j < categoryList.size(); j++){
+//                if (toyList.get(i).)
+            }
+        }
     }
 }

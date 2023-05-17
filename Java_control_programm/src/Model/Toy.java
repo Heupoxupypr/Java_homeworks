@@ -1,6 +1,6 @@
 package Model;
 
-public class Toy extends Thing implements ToyCategory{
+public class Toy extends Thing implements ToyCategory, ToyName{
     String categoryName;
 
     public Toy(String name, double weight, String categoryName) {
@@ -22,7 +22,17 @@ public class Toy extends Thing implements ToyCategory{
     }
 
     @Override
+    public String getCategory() {
+        return this.categoryName;
+    }
+
+    @Override
     public String toString(){
         return "Toy (" + super.toString() + ", categoryName = " + this.categoryName + ")";
+    }
+
+    @Override
+    public String getName() {
+        return super.getToyName();
     }
 }
